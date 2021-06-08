@@ -1,0 +1,23 @@
+{
+    "presets": [
+        [
+            "@babel/preset-typescript",
+            {
+                "jsxPragma": "createElement",
+                "jsxPragmaFrag": "'span'",
+                "allExtensions": true,
+                "isTSX": true
+            }
+        ]
+    ],
+    "plugins": [
+        [
+            "@babel/plugin-transform-react-jsx",
+            {
+                "pragma": "createElement",
+                "pragmaFrag": "'span'"
+            }
+        ]
+    ],
+    "comments": false
+}

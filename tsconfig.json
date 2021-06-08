@@ -1,0 +1,16 @@
+{
+    "extends": "@tsconfig/recommended/tsconfig.json",
+    "compileOnSave": true,
+    "compilerOptions": {
+        "allowJs": true,
+        "module": "system",
+        "outFile": "compiled/tsc.js"
+    },
+    "include": [
+        "sourcescripts/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
