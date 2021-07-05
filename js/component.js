@@ -31,10 +31,15 @@ class Component {
     }
 }
 
+function getComponents(){
+    return this.Components
+}
+getComponents.Components = []
+
 function applyComponent(derivedClass) {
     $(function () {
         $(derivedClass.selector).each((index, element) => {
-            new derivedClass($(element))
+            getComponents.Components.push(new derivedClass($(element)))
         })
     })
 }
