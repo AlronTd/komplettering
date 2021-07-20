@@ -1,3 +1,9 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/_breakpoints";
+
+
+
 :root{
     --c-primary: #1487FD;
     --c-secondary: #FFBB00;
@@ -11,4 +17,10 @@ body{
 
 .poppins{
     font-family: poppins;
+}
+
+@include media-breakpoint-down(md){
+    .lang-select{
+        font-size: 0.8rem;
+    }
 }

@@ -13,4 +13,10 @@ body {
   font-family: poppins;
 }
 
+@media (max-width: 991.98px) {
+  .lang-select {
+    font-size: 0.76rem;
+  }
+}
+
 /*# sourceMappingURL=custom.css.map */

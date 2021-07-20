@@ -18,13 +18,13 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script>
-        function render(scriptElem, html){
-            if(Array.isArray(html)){
-                for(temlpate of html){
+        function render(scriptElem, html) {
+            if (Array.isArray(html)) {
+                for (template of html) {
                     render(scriptElem, template)
                     scriptElem = scriptElem.nextElementSibling
                 }
-            }else{
+            } else {
                 scriptElem.after($.parseHTML(html)[0])
             }
         }
@@ -79,91 +79,139 @@
         </div>
     </nav> -->
 
-    <nav class="navbarcustom navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#" onclick="routeToPage(HomePage)"><img src="images/logo.svg" alt="Västerås Stad"
-                width="284" height="113.95" /></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#collapseInnerNavbar1" data-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="collapseInnerNavbar1">Home <span
-                            class="sr-only">(current)</span></a>
-                    <div class="collapse" id="collapseInnerNavbar1">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
-                                    aria-label="Search" />
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sök i </button>
-                            </form>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#collapseInnerNavbar1" data-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="collapseInnerNavbar1">Barn och utbildning</a>
-                    <div class="collapse" id="collapseInnerNavbar1">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
-                                    aria-label="Search" />
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sök i </button>
-                            </form>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+    <!-- header -->
+    <div class="bg-light">
+        
+        <!-- alt language links -->
+        <ul class="container ml-auto navbar-nav d-md-flex flex-row flex-wrap justify-content-end lang-select">
+            <li class="nav-item mx-2">
+                <a class="nav-link d-inline-block" href="#">
+                    Lyssna
+                </a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link d-inline-block" href="#">
+                    Lättläst
+                </a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link d-inline-block" href="#">
+                    Teckenspråk
+                </a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link d-inline-block" href="#">
+                    Suomeksi
+                </a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link d-inline-block" href="#">
+                    Other languages
+                </a>
+            </li>
+        </ul>
+        <!-- /alt language links -->
+        
+        <!-- logo row -->
+        <div class="navbar navbar-expand-lg navbar-light container py-0">
+            <a class="navbar-brand d-none d-md-block" href="#" onclick="routeToPage(HomePage)"><img src="images/logo.svg"
+                    alt="Västerås Stad" width="284" height="113.95" /></a>
+            <a class="navbar-brand d-md-none" href="#" onclick="routeToPage(HomePage)"><img src="images/logo.svg"
+                    alt="Västerås Stad" width="147.233" height="57" /></a>
+            <button class="navbar-toggler ml-auto my-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-    </nav>
-    
+        <!-- /logo row -->
+        
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light container pt-0">
+
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#collapseInnerNavbar1" data-toggle="collapse" role="button"
+                            aria-expanded="false" aria-controls="collapseInnerNavbar1">Home <span
+                                class="sr-only">(current)</span></a>
+                        <div class="collapse" id="collapseInnerNavbar1">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                        aria-label="Search" />
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sök i </button>
+                                </form>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#collapseInnerNavbar1" data-toggle="collapse" role="button"
+                            aria-expanded="false" aria-controls="collapseInnerNavbar1">Barn och utbildning</a>
+                        <div class="collapse" id="collapseInnerNavbar1">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                        aria-label="Search" />
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sök i </button>
+                                </form>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <!-- /navbar -->
+    </div>
+    <!-- /header -->
+
     <main class="container">
         <section>
             <div>
-                <h2>Populära sidor och artiklar</h2><script>
+                <h2>Populära sidor och artiklar</h2>
+                <script>
                     render(document.currentScript, '<h1 class="bg-primary">it works!!</h1>')
                 </script>
             </div>
-        
+
             <div>
                 <h2>Rekommenderade sidor och artiklar</h2>
             </div>
         </section>
-        
+
         <section>
             <h2>Just nu i västerås</h2>
         </section>
     </main>
-    
-    
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
