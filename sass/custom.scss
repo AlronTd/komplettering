@@ -21,6 +21,13 @@ body{
 
 @include media-breakpoint-down(md){
     .lang-select{
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+    }
+}
+
+
+@include media-breakpoint-up(md){
+    .navbar{
+        font-size: 1.4rem;
     }
 }

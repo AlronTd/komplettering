@@ -15,7 +15,12 @@ body {
 
 @media (max-width: 991.98px) {
   .lang-select {
-    font-size: 0.76rem;
+    font-size: 0.7rem;
+  }
+}
+@media (min-width: 768px) {
+  .navbar {
+    font-size: 1.4rem;
   }
 }
 
