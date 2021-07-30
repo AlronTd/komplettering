@@ -1,27 +1,17 @@
-:root {
-  --c-primary: #1487FD;
-  --c-secondary: #FFBB00;
-  --c-dark: #333333;
-  --c-light: #8A8A8A;
-}
+/* Error: Undefined variable.
+ *   ,
+ * 1 | $primary:       $blue;
+ *   |                 ^^^^^
+ *   '
+ *   sass\custom.scss 1:17  root stylesheet */
 
-body {
-  font-family: roboto;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a   \2577 \a 1 \2502  $primary:       $blue;\d\a   \2502                  ^^^^^\a   \2575 \a   sass\\custom.scss 1:17  root stylesheet";
 }
-
-.poppins {
-  font-family: poppins;
-}
-
-@media (max-width: 991.98px) {
-  .lang-select {
-    font-size: 0.7rem;
-  }
-}
-@media (min-width: 768px) {
-  .navbar {
-    font-size: 1.4rem;
-  }
-}
-
-/*# sourceMappingURL=custom.css.map */

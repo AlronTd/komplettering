@@ -1,4 +1,18 @@
 "use strict";
+function render(scriptElem, html) {
+    if (Array.isArray(html)) {
+        for (let template of html) {
+            render(scriptElem, template);
+            if (!scriptElem.nextElementSibling) {
+                throw new Error('Could not create element.');
+            }
+            scriptElem = scriptElem.nextElementSibling;
+        }
+    }
+    else {
+        scriptElem.after($.parseHTML(html)[0]);
+    }
+}
 function getTags() {
     if (!this.pagesToTags) {
         this.pagesToTags = new Map();
