@@ -1,7 +1,7 @@
-$primary:       $blue;
-$secondary:     $gray-600;
-$light:         $gray-100;
-$dark:          $gray-800;
+// $primary:       $blue;
+// $secondary:     $gray-600;
+// $light:         $gray-100;
+// $dark:          $gray-800;
 
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
@@ -31,8 +31,8 @@ body{
 }
 
 
-@include media-breakpoint-up(md){
-    .navbar{
-        font-size: 1.4rem;
-    }
-}
+// @include media-breakpoint-up(md){
+//     .navbar{
+//         font-size: 1.4rem;
+//     }
+// }
