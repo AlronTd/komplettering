@@ -129,30 +129,52 @@
     <main class="container d-flex flex-column">
         <h1 class="m-5 mx-auto">Barn och utbildning</h1>
 
+        <!-- förskola -->
         <div class="bg-light p-3 rounded">
+
+            <!-- header -->
             <a data-toggle="collapse" href="#collapseForskola" role="button" aria-expanded="false"
                 aria-controls="collapseForskola">
                 <div class="d-flex m-2">
                     <h2 class="mx-auto text-dark">Förskola <img href="../../images/caretdown.svg" width="1"></h2>
                 </div>
             </a>
+            <!-- /header -->
 
+            <!-- link list -->
             <div class="collapse" id="collapseForskola">
+
+                <!-- filter form -->
                 <form class="form-inline row my-5 mx-auto my-lg-0">
                     <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord"
                         aria-label="Filter" />
                     <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
                 </form>
+                <!-- /filter form -->
+
+                <!-- results -->
                 <div class="d-flex flex-wrap my-3">
-                    <a href="http://" class="text-light border-light">
-                        <div class="rounded-pill bg-primary py-2 px-3 m-1">
-                            Frågor och svar om förskola och pedagogisk omsorg
-                        </div>
-                    </a>
+
+                    <!-- bubble link -->
+                    <template id="bubblelink">
+                        
+                        <a href="http://" class="text-light border-light">
+                            <div class="rounded-pill bg-primary py-2 px-3 m-1">
+                                Frågor och svar om förskola och pedagogisk omsorg
+                            </div>
+                        </a>
+                    </template>
+                    <!-- /bubble link -->
+
                 </div>
+                <!-- /results -->
+
             </div>
+            <!-- /link list -->
 
         </div>
+        <!-- /förskola -->
+
     </main>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
