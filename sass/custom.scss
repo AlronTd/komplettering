@@ -3,9 +3,44 @@
 // $light:         $gray-100;
 // $dark:          $gray-800;
 
+$percents: (25 50 75 99 100);
+
+
+
 @import "bootstrap/scss/bootstrap.scss";
 
-
+@each $percent in $percents{
+    .vw-#{$percent}{
+        width: $percent * 1vw !important;
+    }
+    .wp-#{$percent}{
+        width: $percent * 1% !important;
+    }
+    .vh-#{$percent}{
+        height: $percent * 1vh !important;
+    }
+    .hp-#{$percent}{
+        height: $percent * 1% !important;
+    }
+    
+    @each $breakpoint, $value in $grid-breakpoints{
+        @include media-breakpoint-up($breakpoint){
+            .vw-#{$breakpoint}-#{$percent}{
+                width: $percent * 1vw !important;
+            }
+            .wp-#{$breakpoint}-#{$percent}{
+                width: $percent * 1% !important;
+            }
+            .vh-#{$breakpoint}-#{$percent}{
+                height: $percent * 1vh !important;
+            }
+            .hp-#{$breakpoint}-#{$percent}{
+                height: $percent * 1% !important;
+            }
+        }
+        
+    }
+}
 
 :root{
     --c-primary: #1487FD;
@@ -28,16 +63,30 @@ body{
     }
 }
 
-.home-search{
-    background-image: url("../images/sunrise-1227500__340.jpg");
-    background-clip: border-box;
-    background-repeat: no-repeat;
-    background-size: 100%
+// .home-search{
+//     background-image: url("../images/night-547342__480.jpg");
+//     background-repeat: no-repeat;
+//     background-size: 100%;
+//     background-clip: border-box;
+//     background-position: top;
+// }
+
+
+@include media-breakpoint-up(sm){
+    .home-search{
+        background-image: url("../images/sunrise-1227500__340.jpg");
+        background-size: 100%;
+        background-clip: border-box;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+    
+    // .navbar{
+    //     font-size: 1.4rem;
+    // }
 }
 
-
-// @include media-breakpoint-up(md){
-//     .navbar{
-//         font-size: 1.4rem;
-//     }
-// }
+.newslist{
+    
+}

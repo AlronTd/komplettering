@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="home-search">
+<body class="">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@
     <script src="compiled/tsc.js"></script>
 
     <!-- header -->
-    <div class="bg-light">
+    <header class="bg-light">
 
         <!-- alt language links -->
         <ul class="container ml-auto navbar-nav d-md-flex flex-row flex-wrap justify-content-end lang-select">
@@ -79,40 +79,40 @@
 
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto flex-wrap">
-                    <li class="nav-item ">
-                        <a class="nav-link px-3 mr-1 rounded-pill bg-primary"
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
                             href="./views/pageindex/edupageindex.html">
                             Barn och utbildning
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/helppageindex.html">
-                            Omsorg, stöd och hjälp
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/helppageindex.html">
+                            Omsorg, stöd och&nbsp;hjälp
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/exppageindex.html">
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/exppageindex.html">
                             Uppleva och göra
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/buildpageindex.html">
-                            Bygga, bo och miljö
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/buildpageindex.html">
+                            Bygga, bo och&nbsp;miljö
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/transpageindex.html">
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/transpageindex.html">
                             Trafik och gator
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/jobpageindex.html">
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/jobpageindex.html">
                             Näringsliv och arbete
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/polpageindex.html">
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/polpageindex.html">
                             Kommun och politik
                         </a>
                     </li>
@@ -120,31 +120,34 @@
             </div>
         </nav>
         <!-- /navbar -->
-    </div>
+    </header>
     <!-- /header -->
 
     <main class="container">
 
         <!-- search -->
-        <section class=" py-5 text-light">
-            <div class="my-5 py-5">
+        <section class="home-search py-5 text-light">
+            <div class="my-md-5 d-flex flex-column align-items-center">
                 <!-- filter form -->
-                <form class="form-inline row my-5 mx-auto my-lg-0 m-3">
-                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" aria-label="Sök">
-                    <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                <form class="form-inline row my-lg-0 m-3 justify-content-center flex-md-nowrap">
+                    <input class="form-control mr-sm-2 " type="search" placeholder="Ange sökord" aria-label="Sök">
+                    <button class="btn btn-success col-sm-3 " type="submit">Sök</button>
                 </form>
                 <!-- /filter form -->
 
-                <div class="bg-dark rounded p-2 m-3">
+                <div class="bg-dark rounded p-2 m-3 wp-md-50">
                     <div>
-                        <h2>Populära sidor och artiklar</h2>
+                        <label for="homesearchpopular">Populära sidor och artiklar:</label>
+                        <div id="homesearchpopular">
+                            
+                        </div>
                         <script>
                             render(document.currentScript, '<div></div>')
                         </script>
                     </div>
 
                     <div>
-                        <h2>Rekommenderade sidor och artiklar</h2>
+                        <div>Rekommenderade sidor och artiklar:</div>
                     </div>
                 </div>
 
@@ -154,13 +157,16 @@
         <!-- /search -->
 
         <!-- news -->
-        <section>
+        <section class="p-5 bg-light">
             <h2 class="text-center">Just nu i västerås</h2>
-            <div class="d-flex form-inline">
+            <div class="d-flex form-inline form-group justify-content-center">
+                <label for="newsdate">
+                    Välj datum:
+                </label>
                 <script>
                     $(render(
                         document.currentScript,
-                        '<input class="form-control m-auto text-center my-3" type="date" name="" id="" value="' + nowDate() + '" min="' + nowDate() + '">'
+                        '<input class="form-control m-1 text-center my-3" type="date" name="" id="newsdate" value="' + nowDate() + '" min="' + nowDate() + '">'
                     )).on('input', newsDateChangeEventHandler)
                 </script>
             </div>

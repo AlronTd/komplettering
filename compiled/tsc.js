@@ -35,6 +35,13 @@ function render(scriptElem, html) {
 function nowDate() {
     return new Date().toISOString().substr(0, 10);
 }
+// function populateDatalist(scriptElem: HTMLOrSVGScriptElement, data: string[] | (() => string[])){
+//     if (typeof data === 'function') {
+//         data = data()
+//     }
+//     let content: Node[] = $.parseHTML('<option>' + data.join('</option><option>') + '</option>')
+//     $(scriptElem).after(content)
+// }
 function getTags() {
     if (!this.pagesToTags) {
         this.pagesToTags = new Map();

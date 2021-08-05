@@ -21,7 +21,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="../../compiled/tsc.js"></script>
 
-    <div class="bg-light">
+    <!-- header -->
+    <header class="bg-light">
 
         <!-- alt language links -->
         <ul class="container ml-auto navbar-nav d-md-flex flex-row flex-wrap justify-content-end lang-select">
@@ -70,67 +71,73 @@
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-light container pt-0">
 
-
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link disabled" href="./views/pageindex/edupageindex.html" tabindex="-1"
-                            aria-disabled="true">
-                            <div class="px-2 py-1 rounded-pill text-center text-light bg-primary">
-                                Barn och utbildning <span class="sr-only">(här är du)</span>
-                            </div>
+                    <li class="nav-item text-center active">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light disabled"
+                            href="./views/pageindex/edupageindex.html" tabindex="-1" aria-disabled="true">
+                            Barn och utbildning <span class="sr-only">(här är du)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/helppageindex.html">
-                            <div class="px-2 py-1 rounded-pill text-center text-light bg-primary">
-                                Omsorg, stöd och&nbsp;hjälp
-                            </div>
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/helppageindex.html">
+                            Omsorg, stöd och&nbsp;hjälp
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/exppageindex.html">
-                            <div class="px-2 py-1 rounded-pill text-center text-light bg-primary">
-                                Uppleva och göra
-                            </div>
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/exppageindex.html">
+                            Uppleva och göra
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/buildpageindex.html">
-                            <div class="px-2 py-1 rounded-pill text-center text-light bg-primary">
-                                Bygga, bo och&nbsp;miljö
-                            </div>
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/buildpageindex.html">
+                            Bygga, bo och&nbsp;miljö
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/transpageindex.html">
-                            <div class="px-2 py-1 rounded-pill text-center text-light bg-primary">Trafik och gator</div>
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/transpageindex.html">
+                            Trafik och gator
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/jobpageindex.html">
-                            <div class="px-2 py-1 rounded-pill text-center text-light bg-primary">Näringsliv och arbete
-                            </div>
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/jobpageindex.html">
+                            Näringsliv och arbete
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./views/pageindex/polpageindex.html">
-                            <div class="px-2 py-1 rounded-pill text-center text-light bg-primary">Kommun och politik
-                            </div>
+                    <li class="nav-item text-center">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/polpageindex.html">
+                            Kommun och politik
                         </a>
                     </li>
                 </ul>
             </div>
         </nav>
         <!-- /navbar -->
-    </div>
+    </header>
+    <!-- /header -->
+
+    <!-- bubble link -->
+    <template id="bubblelink">
+
+        <a href="http://" class="text-light border-light">
+            <div class="rounded-pill bg-primary py-2 px-3 m-1">
+                TODO
+            </div>
+        </a>
+    </template>
+    <!-- /bubble link -->
 
     <main class="container d-flex flex-column">
-        <h1 class="m-5 mx-auto">Barn och utbildning</h1>
+        <h1 class="my-5 mx-auto text-center">Barn och utbildning</h1>
 
         <!-- förskola -->
-        <div class="bg-light p-3 rounded">
+        <div class="bg-light p-3 m-4 rounded">
 
             <!-- header -->
             <a data-toggle="collapse" href="#collapseForskola" role="button" aria-expanded="false"
@@ -146,25 +153,17 @@
 
                 <!-- filter form -->
                 <form class="form-inline row my-5 mx-auto my-lg-0">
-                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord"
+                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" list="optionsForskola"
                         aria-label="Filter" />
                     <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                    <datalist id="optionsForskola">
+                        
+                    </datalist>
                 </form>
                 <!-- /filter form -->
 
                 <!-- results -->
                 <div class="d-flex flex-wrap my-3">
-
-                    <!-- bubble link -->
-                    <template id="bubblelink">
-                        
-                        <a href="http://" class="text-light border-light">
-                            <div class="rounded-pill bg-primary py-2 px-3 m-1">
-                                Frågor och svar om förskola och pedagogisk omsorg
-                            </div>
-                        </a>
-                    </template>
-                    <!-- /bubble link -->
 
                 </div>
                 <!-- /results -->
@@ -174,6 +173,269 @@
 
         </div>
         <!-- /förskola -->
+        
+        <!-- grundskola -->
+        <div class="bg-light p-3 m-4 rounded">
+
+            <!-- header -->
+            <a data-toggle="collapse" href="#collapseGrundskola" role="button" aria-expanded="false"
+                aria-controls="collapseGrundskola">
+                <div class="d-flex m-2">
+                    <h2 class="mx-auto text-dark">Grundskola <img href="../../images/caretdown.svg" width="1"></h2>
+                </div>
+            </a>
+            <!-- /header -->
+
+            <!-- link list -->
+            <div class="collapse" id="collapseGrundskola">
+
+                <!-- filter form -->
+                <form class="form-inline row my-5 mx-auto my-lg-0">
+                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" list="optionsGrundskola"
+                        aria-label="Filter" />
+                    <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                </form>
+                <!-- /filter form -->
+
+                <!-- results -->
+                <div class="d-flex flex-wrap my-3">
+
+
+
+                </div>
+                <!-- /results -->
+
+            </div>
+            <!-- /link list -->
+
+        </div>
+        <!-- /grundskola -->
+
+        <!-- gymnasieskola -->
+        <div class="bg-light p-3 m-4 rounded">
+
+            <!-- header -->
+            <a data-toggle="collapse" href="#collapseGymnasieskola" role="button" aria-expanded="false"
+                aria-controls="collapseGymnasieskola">
+                <div class="d-flex m-2">
+                    <h2 class="mx-auto text-dark">Gymnasieskola <img href="../../images/caretdown.svg" width="1"></h2>
+                </div>
+            </a>
+            <!-- /header -->
+
+            <!-- link list -->
+            <div class="collapse" id="collapseGymnasieskola">
+
+                <!-- filter form -->
+                <form class="form-inline row my-5 mx-auto my-lg-0">
+                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" list="optionsGymnasieskola"
+                        aria-label="Filter" />
+                    <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                </form>
+                <!-- /filter form -->
+
+                <!-- results -->
+                <div class="d-flex flex-wrap my-3">
+
+
+
+                </div>
+                <!-- /results -->
+
+            </div>
+            <!-- /link list -->
+
+        </div>
+        <!-- /gymnasieskola -->
+
+        <!-- särskola -->
+        <div class="bg-light p-3 m-4 rounded">
+
+            <!-- header -->
+            <a data-toggle="collapse" href="#collapseSarskola" role="button" aria-expanded="false"
+                aria-controls="collapseSarskola">
+                <div class="d-flex m-2">
+                    <h2 class="mx-auto text-dark">Särskola <img href="../../images/caretdown.svg" width="1"></h2>
+                </div>
+            </a>
+            <!-- /header -->
+
+            <!-- link list -->
+            <div class="collapse" id="collapseSarskola">
+
+                <!-- filter form -->
+                <form class="form-inline row my-5 mx-auto my-lg-0">
+                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" list="optionsSarskola" 
+                        aria-label="Filter" />
+                    <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                </form>
+                <!-- /filter form -->
+
+                <!-- results -->
+                <div class="d-flex flex-wrap my-3">
+
+
+
+                </div>
+                <!-- /results -->
+
+            </div>
+            <!-- /link list -->
+
+        </div>
+        <!-- /särskola -->
+
+        <!-- kulturskola -->
+        <div class="bg-light p-3 m-4 rounded">
+
+            <!-- header -->
+            <a data-toggle="collapse" href="#collapseKulturskola" role="button" aria-expanded="false"
+                aria-controls="collapseKulturskola">
+                <div class="d-flex m-2">
+                    <h2 class="mx-auto text-dark">Kulturskola <img href="../../images/caretdown.svg" width="1"></h2>
+                </div>
+            </a>
+            <!-- /header -->
+
+            <!-- link list -->
+            <div class="collapse" id="collapseKulturskola">
+
+                <!-- filter form -->
+                <form class="form-inline row my-5 mx-auto my-lg-0">
+                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" list="optionsKulturskola"
+                        aria-label="Filter" />
+                    <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                </form>
+                <!-- /filter form -->
+
+                <!-- results -->
+                <div class="d-flex flex-wrap my-3">
+
+
+
+                </div>
+                <!-- /results -->
+
+            </div>
+            <!-- /link list -->
+
+        </div>
+        <!-- /kulturskola -->
+
+        <!-- vuxenutbildning -->
+        <div class="bg-light p-3 m-4 rounded">
+
+            <!-- header -->
+            <a data-toggle="collapse" href="#collapseVuxenutbildning" role="button" aria-expanded="false"
+                aria-controls="collapseVuxenutbildning">
+                <div class="d-flex m-2">
+                    <h2 class="mx-auto text-dark">Vuxenutbildning <img href="../../images/caretdown.svg" width="1"></h2>
+                </div>
+            </a>
+            <!-- /header -->
+
+            <!-- link list -->
+            <div class="collapse" id="collapseVuxenutbildning">
+
+                <!-- filter form -->
+                <form class="form-inline row my-5 mx-auto my-lg-0">
+                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" list="optionsVuxenutbildning"
+                        aria-label="Filter" />
+                    <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                </form>
+                <!-- /filter form -->
+
+                <!-- results -->
+                <div class="d-flex flex-wrap my-3">
+
+
+
+                </div>
+                <!-- /results -->
+
+            </div>
+            <!-- /link list -->
+
+        </div>
+        <!-- /vuxenutbildning -->
+
+        <!-- högskolaochyrkeshögskola -->
+        <div class="bg-light p-3 m-4 rounded">
+
+            <!-- header -->
+            <a data-toggle="collapse" href="#collapseHogskolaOchYrkeshogskola" role="button" aria-expanded="false"
+                aria-controls="collapseHogskolaOchYrkeshogskola">
+                <div class="d-flex m-2">
+                    <h2 class="mx-auto text-dark">Högskola och yrkeshögskola <img href="../../images/caretdown.svg"
+                            width="1"></h2>
+                </div>
+            </a>
+            <!-- /header -->
+
+            <!-- link list -->
+            <div class="collapse" id="collapseHogskolaOchYrkeshogskola">
+
+                <!-- filter form -->
+                <form class="form-inline row my-5 mx-auto my-lg-0">
+                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" list="optionsHogskolaOchYrkeshogskola"
+                        aria-label="Filter" />
+                    <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                </form>
+                <!-- /filter form -->
+
+                <!-- results -->
+                <div class="d-flex flex-wrap my-3">
+
+
+
+                </div>
+                <!-- /results -->
+
+            </div>
+            <!-- /link list -->
+
+        </div>
+        <!-- /högskolaochyrkeshögskola -->
+
+        <!-- övrigt -->
+        <div class="bg-light p-3 m-4 rounded">
+
+            <!-- header -->
+            <a data-toggle="collapse" href="#collapseOvrigt" role="button" aria-expanded="false"
+                aria-controls="collapseOvrigt">
+                <div class="d-flex m-2">
+                    <h2 class="mx-auto text-dark">Övrigt inom barn och utbildning <img href="../../images/caretdown.svg"
+                            width="1"></h2>
+                </div>
+            </a>
+            <!-- /header -->
+
+            <!-- link list -->
+            <div class="collapse" id="collapseOvrigt">
+
+                <!-- filter form -->
+                <form class="form-inline row my-5 mx-auto my-lg-0">
+                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" list="optionsOvrigt"
+                        aria-label="Filter" />
+                    <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                </form>
+                <!-- /filter form -->
+
+                <!-- results -->
+                <div class="d-flex flex-wrap my-3">
+
+
+
+                </div>
+                <!-- /results -->
+
+            </div>
+            <!-- /link list -->
+
+        </div>
+        <!-- /övrigt -->
+
+
 
     </main>
 
