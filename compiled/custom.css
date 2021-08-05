@@ -9675,5 +9675,11 @@ body {
     font-size: 0.7rem;
   }
 }
+.home-search {
+  background-image: url("../images/sunrise-1227500__340.jpg");
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
 /*# sourceMappingURL=custom.css.map */

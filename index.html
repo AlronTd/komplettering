@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body class="home-search">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -123,31 +123,44 @@
     </div>
     <!-- /header -->
 
-    <main class="container ">
+    <main class="container">
 
         <!-- search -->
-        <section>
-            <div>
-                <h2>Populära sidor och artiklar</h2>
-                <script>
-                    render(document.currentScript, '<div></div>')
-                </script>
+        <section class=" py-5 text-light">
+            <div class="my-5 py-5">
+                <!-- filter form -->
+                <form class="form-inline row my-5 mx-auto my-lg-0 m-3">
+                    <input class="form-control mr-sm-2 col" type="search" placeholder="Ange sökord" aria-label="Sök">
+                    <button class="btn btn-success my-2 my-sm-0 col-sm-3 " type="submit">Filtrera</button>
+                </form>
+                <!-- /filter form -->
+
+                <div class="bg-dark rounded p-2 m-3">
+                    <div>
+                        <h2>Populära sidor och artiklar</h2>
+                        <script>
+                            render(document.currentScript, '<div></div>')
+                        </script>
+                    </div>
+
+                    <div>
+                        <h2>Rekommenderade sidor och artiklar</h2>
+                    </div>
+                </div>
+
             </div>
 
-            <div>
-                <h2>Rekommenderade sidor och artiklar</h2>
-            </div>
         </section>
         <!-- /search -->
 
         <!-- news -->
         <section>
-            <h2>Just nu i västerås</h2>
+            <h2 class="text-center">Just nu i västerås</h2>
             <div class="d-flex form-inline">
                 <script>
                     $(render(
                         document.currentScript,
-                        '<input class="form-control m-auto text-center" type="date" name="" id="" value="' + nowDate() + '" min="' + nowDate() + '">'
+                        '<input class="form-control m-auto text-center my-3" type="date" name="" id="" value="' + nowDate() + '" min="' + nowDate() + '">'
                     )).on('input', newsDateChangeEventHandler)
                 </script>
             </div>
