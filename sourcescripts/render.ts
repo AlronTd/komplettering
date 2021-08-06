@@ -1,35 +1,52 @@
+abstract class renderableDataObject{
+    abstract toElement(): JQuery<HTMLElement> | Element
+    renderAt(scriptElem: HTMLOrSVGScriptElement | Element): Element | null{
+        $(scriptElem).after(this.toElement())
+        return scriptElem.nextElementSibling
+    }
+}
+
 function render(scriptElem: HTMLOrSVGScriptElement | Element, html: string | string[]): Element[] {
     let toReturn: Element[] = []
-    
+
     if (Array.isArray(html)) {
         for (let template of html) {
-            render(scriptElem, template)
-            if(!scriptElem.nextElementSibling){
-                throw new Error('Could not create element.')
+            for (let createdElement of render(scriptElem, template)) {
+                scriptElem = createdElement
+                toReturn.push(createdElement)
             }
-            scriptElem = scriptElem.nextElementSibling
-            toReturn.push(scriptElem)
         }
     } else {
-        scriptElem.after($.parseHTML(html)[0])
-        
-        if (scriptElem.nextElementSibling){
-            toReturn.push(scriptElem.nextElementSibling)
+        let nodes = $.parseHTML(html)
+        $(scriptElem).after(nodes)
+
+        let next: Element | null = scriptElem
+        for (let node of nodes) {
+            
+            if (next) {
+                next = next.nextElementSibling
+                if (next && node === next) {
+                    toReturn.push(next)
+                }
+            }
         }
     }
 
-        return toReturn
+    return toReturn
 }
 
-function nowDate(){
+function nowDate() {
     return new Date().toISOString().substr(0, 10)
 }
 
-// function populateDatalist(scriptElem: HTMLOrSVGScriptElement, data: string[] | (() => string[])){
-//     if (typeof data === 'function') {
-//         data = data()
-//     }
-    
-//     let content: Node[] = $.parseHTML('<option>' + data.join('</option><option>') + '</option>')
-//     $(scriptElem).after(content)
-// }
+function wrapInTags(scriptElem: HTMLOrSVGScriptElement, elementOpenTag: string, elementCloseTag: string, data: string[] | (() => string[])) {
+    if (typeof data === 'function') {
+        data = data()
+    }
+
+    return render(scriptElem, elementOpenTag + data.join(elementCloseTag + elementOpenTag) + elementCloseTag)
+}
+
+function populateDatalist(scriptElem: HTMLOrSVGScriptElement, data: string[] | (() => string[])) {
+    wrapInTags(scriptElem, '<option>', '</option>', data)
+}

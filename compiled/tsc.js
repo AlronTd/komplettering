@@ -12,22 +12,35 @@ function getEventData(date) {
 }
 class NewsEvent {
 }
+function useHomeValues() {
+}
+class renderableDataObject {
+    renderAt(scriptElem) {
+        $(scriptElem).after(this.toElement());
+        return scriptElem.nextElementSibling;
+    }
+}
 function render(scriptElem, html) {
     let toReturn = [];
     if (Array.isArray(html)) {
         for (let template of html) {
-            render(scriptElem, template);
-            if (!scriptElem.nextElementSibling) {
-                throw new Error('Could not create element.');
+            for (let createdElement of render(scriptElem, template)) {
+                scriptElem = createdElement;
+                toReturn.push(createdElement);
             }
-            scriptElem = scriptElem.nextElementSibling;
-            toReturn.push(scriptElem);
         }
     }
     else {
-        scriptElem.after($.parseHTML(html)[0]);
-        if (scriptElem.nextElementSibling) {
-            toReturn.push(scriptElem.nextElementSibling);
+        let nodes = $.parseHTML(html);
+        $(scriptElem).after(nodes);
+        let next = scriptElem;
+        for (let node of nodes) {
+            if (next) {
+                next = next.nextElementSibling;
+                if (next && node === next) {
+                    toReturn.push(next);
+                }
+            }
         }
     }
     return toReturn;
@@ -35,21 +48,24 @@ function render(scriptElem, html) {
 function nowDate() {
     return new Date().toISOString().substr(0, 10);
 }
-// function populateDatalist(scriptElem: HTMLOrSVGScriptElement, data: string[] | (() => string[])){
-//     if (typeof data === 'function') {
-//         data = data()
-//     }
-//     let content: Node[] = $.parseHTML('<option>' + data.join('</option><option>') + '</option>')
-//     $(scriptElem).after(content)
-// }
+function wrapInTags(scriptElem, elementOpenTag, elementCloseTag, data) {
+    if (typeof data === 'function') {
+        data = data();
+    }
+    return render(scriptElem, elementOpenTag + data.join(elementCloseTag + elementOpenTag) + elementCloseTag);
+}
+function populateDatalist(scriptElem, data) {
+    wrapInTags(scriptElem, '<option>', '</option>', data);
+}
 function getTags() {
     if (!this.pagesToTags) {
         this.pagesToTags = new Map();
     }
     return this.pagesToTags;
 }
-class SearchLink {
+class SearchLink extends renderableDataObject {
     constructor(name, url, tags) {
+        super();
         this.tags = [];
         this.name = name;
         this.url = url;
@@ -60,6 +76,14 @@ class SearchLink {
     static get currentSearchables() {
         let currentIndexPage = new URLSearchParams(window.location.search).get('indexpage');
         return new Map();
+    }
+    toElement() {
+        let toReturn = $('template#bubblelink').clone();
+        toReturn = $(toReturn.prop('content'));
+        toReturn = toReturn.find('a');
+        toReturn.attr('href', this.url);
+        let content = toReturn.children().text(this.name);
+        return toReturn;
     }
 }
 class TestClass {

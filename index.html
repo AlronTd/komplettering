@@ -133,6 +133,11 @@
                     <input class="form-control mr-sm-2 " type="search" placeholder="Ange sökord" aria-label="Sök">
                     <button class="btn btn-success col-sm-3 " type="submit">Sök</button>
                 </form>
+                <datalist id="searchDatalist">
+                    <script>
+                        populateDatalist(document.currentScript, ['test 1', 'test 2', 'something random'])
+                    </script>
+                </datalist>
                 <!-- /filter form -->
 
                 <div class="bg-dark rounded p-2 m-3 wp-md-50">
@@ -159,7 +164,7 @@
         <!-- news -->
         <section class="p-5 bg-light">
             <h2 class="text-center">Just nu i västerås</h2>
-            <div class="d-flex form-inline form-group justify-content-center">
+            <div class="d-flex form-inline form-group justify-content-center" aria-live="polite">
                 <label for="newsdate">
                     Välj datum:
                 </label>
@@ -171,7 +176,7 @@
                 </script>
             </div>
 
-            <div id="newslist">
+            <div id="newslist" aria-live="polite">
 
             </div>
         </section>

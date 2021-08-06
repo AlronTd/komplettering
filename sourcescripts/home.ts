@@ -15,3 +15,7 @@ function getEventData(date: string | number | Date): NewsEvent[]{
 class NewsEvent{
     
 }
+
+function useHomeValues(){
+    
+}
