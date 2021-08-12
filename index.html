@@ -87,32 +87,38 @@
                         </a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/helppageindex.html">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/helppageindex.html">
                             Omsorg, stöd och&nbsp;hjälp
                         </a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/exppageindex.html">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/exppageindex.html">
                             Uppleva och göra
                         </a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/buildpageindex.html">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/buildpageindex.html">
                             Bygga, bo och&nbsp;miljö
                         </a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/transpageindex.html">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/transpageindex.html">
                             Trafik och gator
                         </a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/jobpageindex.html">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/jobpageindex.html">
                             Näringsliv och arbete
                         </a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light" href="./views/pageindex/polpageindex.html">
+                        <a class="nav-link px-3 m-1 rounded-pill bg-primary text-light"
+                            href="./views/pageindex/polpageindex.html">
                             Kommun och politik
                         </a>
                     </li>
@@ -144,7 +150,7 @@
                     <div>
                         <label for="homesearchpopular">Populära sidor och artiklar:</label>
                         <div id="homesearchpopular">
-                            
+
                         </div>
                         <script>
                             render(document.currentScript, '<div></div>')
@@ -176,9 +182,36 @@
                 </script>
             </div>
 
-            <div id="newslist" aria-live="polite">
+            <ol id="newslist" aria-live="polite">
+                <template id="newslistevent">
 
-            </div>
+                </template>
+
+                <li class="bg-white rounded p-2">
+                    <a href="#" class="">
+                        <div class="border p-2 d-flex justify-content-between">
+                            <div>
+                                <h2 class="newslistevent-article-name">
+                                    test headline of an article with a really long name
+                                </h2>
+                                <div class="">
+                                    <span class="newslistevent-event-location">
+                                        Jäknehuset
+                                    </span>
+                                    <span class="newslistevent-event-time">
+                                        12:45
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <i class="far fa-share-square d-block"></i>
+                        </div>
+                    </a>
+                </li>
+
+            </ol>
         </section>
         <!-- /news -->
 

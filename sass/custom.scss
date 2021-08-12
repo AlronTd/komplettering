@@ -52,6 +52,9 @@ $percents: (25 50 75 99 100);
 body{
     font-family: roboto;
 }
+a{
+    text-decoration: none !important;
+}
 
 .poppins{
     font-family: poppins;
@@ -87,6 +90,11 @@ body{
     // }
 }
 
-.newslist{
+#newslist{
+    list-style-type: none;
     
+    .fa-share, .fa-share-square{
+        font-size: 3em;
+        text-decoration: none;
+    }
 }

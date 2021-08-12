@@ -10166,6 +10166,10 @@ body {
   font-family: roboto;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .poppins {
   font-family: poppins;
 }
@@ -10183,6 +10187,13 @@ body {
     background-position: top;
     background-repeat: no-repeat;
   }
+}
+#newslist {
+  list-style-type: none;
+}
+#newslist .fa-share, #newslist .fa-share-square {
+  font-size: 3em;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=custom.css.map */
