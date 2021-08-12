@@ -10170,6 +10170,10 @@ a {
   text-decoration: none !important;
 }
 
+ol, ul {
+  padding-left: 0;
+}
+
 .poppins {
   font-family: poppins;
 }
@@ -10194,6 +10198,10 @@ a {
 #newslist .fa-share, #newslist .fa-share-square {
   font-size: 3em;
   text-decoration: none;
+}
+#newslist h2, #newslist h3, #newslist h4, #newslist h5, #newslist h6,
+#newslist .h1, #newslist .h2, #newslist .h3, #newslist .h4, #newslist .h5, #newslist .h6 {
+  font-size: 1.6rem;
 }
 
 /*# sourceMappingURL=custom.css.map */

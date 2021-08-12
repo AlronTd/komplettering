@@ -168,7 +168,7 @@
         <!-- /search -->
 
         <!-- news -->
-        <section class="p-5 bg-light">
+        <section class="py-5 px-md-5 bg-light">
             <h2 class="text-center">Just nu i västerås</h2>
             <div class="d-flex form-inline form-group justify-content-center" aria-live="polite">
                 <label for="newsdate">
@@ -184,32 +184,39 @@
 
             <ol id="newslist" aria-live="polite">
                 <template id="newslistevent">
-
-                </template>
-
-                <li class="bg-white rounded p-2">
-                    <a href="#" class="">
-                        <div class="border p-2 d-flex justify-content-between">
-                            <div>
-                                <h2 class="newslistevent-article-name">
-                                    test headline of an article with a really long name
-                                </h2>
-                                <div class="">
-                                    <span class="newslistevent-event-location">
-                                        Jäknehuset
-                                    </span>
-                                    <span class="newslistevent-event-time">
-                                        12:45
-                                    </span>
+                    <li class="bg-white rounded p-2 my-4">
+                        <a href="#" class="">
+                            <div class="border p-2 d-flex justify-content-between">
+                                <div>
+                                    <h2 class="newslistevent-article-name">
+                                        
+                                    </h2>
+                    
+                                    <div class="text-black-50 font-weight-bold">
+                                        <span class="newslistevent-event-time">
+                                            
+                                        </span>
+                                        <span class="newslistevent-event-location">
+                                            
+                                        </span>
+                    
+                                    </div>
+                    
                                 </div>
-
+                    
+                    
+                                <i class="far fa-share-square my-auto d-none d-md-block"></i>
                             </div>
-
-
-                            <i class="far fa-share-square d-block"></i>
-                        </div>
-                    </a>
-                </li>
+                        </a>
+                    </li>
+                </template>
+                <script>
+                    for(let event of getEventData(Date.now())){
+                        event.renderAt(document.currentScript)
+                        console.log('rendering:', event)
+                        console.log('sort order:', event.sortOrder)
+                    }
+                </script>
 
             </ol>
         </section>
